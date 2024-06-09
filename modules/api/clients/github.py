@@ -16,3 +16,15 @@ class GitHub:
         body = r.json()
 
         return body
+
+    @staticmethod
+    def get_emojis():
+        return requests.get('https://api.github.com/emojis')
+
+    @staticmethod
+    def get_all_templates():
+        return requests.get(f'https://api.github.com/gitignore/templates')
+
+    @staticmethod
+    def get_template_by_name(name):
+        return requests.get(f'https://api.github.com/gitignore/templates/{name}')
